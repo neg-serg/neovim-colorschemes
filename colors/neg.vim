@@ -29,7 +29,9 @@ let s:lcyn='#367cb0'        " light cyan hexadecimal    (color 14)
 let s:dwht='#899ca1'        " dark white hexadecimal    (color 7)
 let s:lwht='#c0c0c0'        " light white hexadecimal   (color 15)
 let s:culc='#272727'        " cursor line/column hexadecimal
-let s:comm='#3C4754'        " cursor line/column hexadecimal
+let s:comm='#3C4754'        " comment color
+let s:spec='#017978'        " special color
+let s:lstr='#54667A'        " string highlight
 let s:color233='#040404'    " (color 233)
 let s:color30='#008787'     " (color 30)
 let s:color31='#0087af'     " (color 31)
@@ -45,7 +47,7 @@ let s:color227='#006d39'    " (color 227)
 let s:color228='#00406d'    " (color 228)
 let s:color162='#cc6666'    " (color 162)
 let s:color127='#5f0000'    " (color 127)
-let s:color253='#617287'    " (color 253)
+let s:color253='#6C7E96'    " (color 253)
 let s:color255='#eeeeee'    " (color 255)
 let s:color200='#0c1014'    " (color 200)
 let s:colorcursor='#375bc1' " (color cursor)
@@ -58,7 +60,7 @@ fun! s:hi(group, bg, fg, attr)
          \ . ' ' . (a:attr != '' ? 'gui='   . a:attr : '')
 endfun
 
-hi Normal guifg=#617287 guibg=NONE
+hi Normal guifg=#6C7E96 guibg=NONE
 
 hi! clear DiffAdd
 hi! clear DiffAdded
@@ -84,9 +86,9 @@ call s:hi('NonText',              '',            s:dcyn,        '')
 call s:hi('Directory',            '',            s:dcyn,        '')
 call s:hi('SpecialKey',           '',            s:lylw,        '')
 call s:hi('Type',                 '',            s:dcyn,        '')
-call s:hi('String',               '',            s:dgrn,        '')
+call s:hi('String',               '',            s:lstr,        '')
 call s:hi('Constant',             '',            s:lmag,        '')
-call s:hi('Special',              '',            s:lgrn,        '')
+call s:hi('Special',              '',            s:spec,        '')
 call s:hi('SpecialChar',          '',            s:color30,     '')
 call s:hi('Number',               '',            s:lcyn,        '')
 call s:hi('Identifier',           '',            '#6289B3',     '')
