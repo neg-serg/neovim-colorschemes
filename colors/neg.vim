@@ -1,5 +1,5 @@
 " Name:        neg
-" Version:     2.1
+" Version:     2.2
 " Last Change: 20-01-2020
 " Maintainer:  Sergey Miroshnichenko <serg.zorg@gmail.com>
 " URL:         https://github.com/neg-serg/neovim-colorschemes/blob/master/colors/neg.vim
@@ -186,53 +186,17 @@ if has('spell')
     hi clear SpellCap
     hi clear SpellRare
     hi clear SpellLocal
-    call s:hi('SpellBad', '', '', 'underline')
-    call s:hi('SpellCap', '', '', 'underline')
-    call s:hi('SpellRare', '', '', 'underline')
+    call s:hi('SpellBad',   '', '', 'underline')
+    call s:hi('SpellCap',   '', '', 'underline')
+    call s:hi('SpellRare',  '', '', 'underline')
     call s:hi('SpellLocal', '', '', 'underline')
 endif
 
 call s:hi('SyntasticErrorSign',   s:culc, s:syne, '')
 call s:hi('SyntasticWarningSign', s:culc, s:ops3, '')
 
-call s:hi('TermCursor', s:ccur, 'NONE', 'NONE')
+call s:hi('TermCursor',   s:ccur, 'NONE', 'NONE')
 call s:hi('TermCursorNC', s:comm, 'NONE', 'NONE')
-
-syn region texZone start='\\begin{lstlisting}' end='\\end{lstlisting}\|%stopzone\>' contains=@Spell
-syn region texZone start='\\begin{minted}' end='\\end{minted}\|%stopzone\>' contains=@Spell
-
-if exists('g:loaded_operator_highlight')
-    finish
-else
-    let g:loaded_operator_highlight = 1
-endif
-
-if !exists('g:ophigh_filetypes_to_ignore')
-  let g:ophigh_filetypes_to_ignore = {}
-endif
-
-fun! s:IgnoreFiletypeIfNotSet(file_type)
-  if get( g:ophigh_filetypes_to_ignore, a:file_type, 1)
-    let g:ophigh_filetypes_to_ignore[ a:file_type ] = 1
-  endif
-endfunction
-
-call s:IgnoreFiletypeIfNotSet('help')
-call s:IgnoreFiletypeIfNotSet('markdown')
-call s:IgnoreFiletypeIfNotSet('qf')
-call s:IgnoreFiletypeIfNotSet('diff')
-call s:IgnoreFiletypeIfNotSet('html')
-call s:IgnoreFiletypeIfNotSet('css')
-call s:IgnoreFiletypeIfNotSet('less')
-call s:IgnoreFiletypeIfNotSet('xml')
-call s:IgnoreFiletypeIfNotSet('tex')
-call s:IgnoreFiletypeIfNotSet('notes')
-call s:IgnoreFiletypeIfNotSet('jinja')
-call s:IgnoreFiletypeIfNotSet('lua')
-call s:IgnoreFiletypeIfNotSet('vidir-ls')
-call s:IgnoreFiletypeIfNotSet('haskell')
-call s:IgnoreFiletypeIfNotSet('text')
-call s:IgnoreFiletypeIfNotSet('lisp')
 
 hi link NormalFloat Normal
 hi link CocFloating Normal
