@@ -1,10 +1,11 @@
 # neovim-colorschemes
 
-This repo contains of
+For now I moved my own neg.vim colorscheme to the separated repo:
+https://github.com/neg-serg/neg
 
-- neg.vim, which is my custom jwr-based colorscheme
+So I removed it from here because of name collision.
 
-and also
+It contains:
 
 - NeoSolarized.vim
 - base16-atelier-lakeside.vim
